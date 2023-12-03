@@ -1,0 +1,50 @@
+.footer {
+    margin-top: 70px;
+    padding: 30px 50px 81px 50px;
+    background: #1F1F1F;
+    color: #A5A5A5;
+    font-family: $font-mon;
+    font-size: 20px;
+    font-weight: 300;
+    @include media(){
+        padding: 40px 30px;
+    }
+    @include media($sm){
+        text-align: center;
+        font-size: 18px;
+    }
+    @include media($xs){
+        font-size: 16px;
+    }
+    
+    &__menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 31px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 50px;
+        @include media() {
+            margin-bottom: 30px;
+        }
+        @include media($sm) {
+            gap: 30px;
+        }
+    }
+    
+    &__desc {
+        margin-bottom: 20px;
+    }
+    
+    &__logo {
+        display: block;
+        margin: auto;
+        margin-top: 81px;
+        @include media() {
+            margin-top: 40px;
+            max-width: 210px;
+            width: 100%;
+        }
+    }
+}

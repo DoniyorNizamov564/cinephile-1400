@@ -1,0 +1,136 @@
+$font-inter: 'Inter';
+$font-mon: 'Montserrat';
+$font-mon-alt: 'MontserratAlternates';
+$font-rel: 'Raleway';
+
+$body: #141414;
+$color: #fff;
+
+$xl: 1400px;
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xs: 576px;
+
+@mixin media($size: $xl) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+input, button, textarea {
+    outline: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+body {
+    background: $body;
+    color: $color;
+    font-family: $font-rel;
+}
+
+.container {
+    padding: 0 12px;
+    margin: 0 auto;
+    max-width: 1344px;
+    width: 100%;
+    
+    @include media() {
+        max-width: 1140px;
+    }
+    @include media($lg) {
+        max-width: 960px;
+    }
+    @include media($md) {
+        max-width: 720px;
+    }
+    @include media($sm) {
+        max-width: 540px;
+    }
+}
+
+.text-limit {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.more {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #149A03;
+    font-size: 20px;
+    line-height: 150%;
+    @include media($md) {
+        font-size: 18px;
+    }
+    @include media($sm) {
+        font-size: 16px;
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    &__spiner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid green;
+        border-radius: 50%;
+        border-bottom-color: transparent;
+        animation: loading 1s linear infinite;
+    }
+}
+
+@keyframes loading {
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.actor {
+    border-radius: 25px;
+    border: 1px solid #FFF;
+    background: rgba(20, 20, 20, 0.50);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    &__img {
+        width: 45px;
+        height: 50px;
+        border-radius: 50px;
+        object-fit: cover;
+    }
+    
+    &__name {
+        margin-right: 13px;
+        line-height: 30px;
+    }
+}

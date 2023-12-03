@@ -1,0 +1,96 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.50);
+    z-index: 100;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    
+    &.color {
+        background: #000;
+    }
+    
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @include media($sm){
+            position: absolute;
+            top: 100%;
+            right: 0;
+            flex-direction: column;
+            min-width: 200px;
+            background: rgba(20, 20, 20, 0.50);
+            align-items: stretch;
+            gap: 0;
+            transform: scaleY(0);
+            transition: 0.5s;
+            transform-origin: 0 0;
+            
+            &.active {
+                transform: scaleY(1);
+            }
+        }
+    }
+    
+    &__burger {
+        background: none;
+        color: #fff;
+        font-size: 25px;
+        display: none;
+        @include media($sm){
+            display: block;
+        }
+    }
+    
+    &__link {
+        color: rgba(255, 255, 255, 0.60);
+        font-size: 18px;
+        font-weight: 700;
+        padding: 25px 0;
+        display: block;
+        position: relative;
+        transition: 0.5s;
+        
+        @include media($sm) {
+            padding: 10px 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.60);
+        }
+        
+        &:hover, &.active {
+            color: $color;
+            &::after {
+                transform: scale(1);
+            }
+        }
+        
+        &::after {
+            border-radius: 15px;
+            background: #149A03;
+            width: 15px;
+            height: 15px;
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            transform: scale(0);
+            transition: 0.5s;
+            
+            @include media($sm) {
+                right: auto;
+                top: 0;
+                margin: auto 0;
+            }
+        }
+    }
+}

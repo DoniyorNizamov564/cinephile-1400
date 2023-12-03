@@ -1,0 +1,125 @@
+.single{
+    &__wrapper{
+        background: #000;
+        margin-top: 99px;
+        position: relative;
+        overflow: hidden;
+        @include media($sm){
+            margin-top: 65px;
+        }
+    }
+    &__bg{
+        width: 60%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        object-fit: cover;
+        filter: blur(25px);
+    }
+    &__content{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        background: linear-gradient(90deg, #000 42%, rgba(0, 0, 0, 0.20) 82%, rgba(0, 0, 0, 0.00));
+        padding: 30px 50px;
+
+        @include media($md){
+            flex-direction: column;
+
+        }
+        @include media($xs){
+            padding: 30px 15px;
+
+        }
+    }
+    &__left{
+        width: 60%;
+        padding-top: 72px;
+
+        @include media($lg){
+            padding-top: 20px;
+        }
+        @include media($md){
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__right{
+        width: 40%;
+        text-align: center;
+        @include media($md){
+            order: -1;
+            width: 100%;
+        }
+        
+    }
+    &__block{
+        width: 100%;
+    }
+    &__img{
+        max-width: 311px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    &__title{
+        font-size: 50px;
+        margin-bottom: 30px;
+        @include media($md){
+            font-size: 40px;
+        }
+        @include media($xs){
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+    }
+    &__desc{
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 25px;
+        max-width: 935px;
+        @include media($xs){
+            font-size: 16px;
+            line-height: 150%;
+        }
+    }
+    &__about{
+        color: rgba(255, 255, 255, 0.60);
+        font-family: $font-mon;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        display: flex;
+        gap: 30px;
+        margin-bottom: 99px;
+
+        @include media($lg){
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        @include media($xs){
+            font-size: 16px;
+            line-height: 150%;
+        }
+    }
+    &__subtitle{
+        font-style: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 30px;
+        margin-top: 71px;
+
+        @include media($xs){
+            margin-top: 30px;
+            line-height: 150%;
+        }
+    }
+    &__actors{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+
+    }
+}

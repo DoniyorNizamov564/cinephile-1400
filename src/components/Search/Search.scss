@@ -1,0 +1,23 @@
+.search {
+    @extend .list-content;
+    
+    &__input {
+        border-radius: 10px;
+        background: #FFF;
+        width: 100%;
+        padding: 20px;
+        color: #141414;
+        font-size: 18px;
+        font-weight: 700;
+        
+        &::placeholder {
+            color: #141414;
+        }
+    }
+    $list: 'wrapper', 'item', 'name', 'img';
+    @each $var in $list {
+        &__#{$var}{
+            @extend .list-content__#{$var}
+        }
+    }
+}

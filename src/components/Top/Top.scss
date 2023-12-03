@@ -1,0 +1,92 @@
+.rate {
+    background: #fff;
+    padding: 30px 0;
+    
+    &__title {
+        color: #141414;
+        font-family: $font-mon;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 30px; /* 100% */
+        margin-left: 100px;
+        margin-bottom: 88px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        @include media($lg) {
+            margin-bottom: 50px;
+        }
+        @include media($md) {
+            margin-bottom: 40px;
+        }
+        
+        @include media($sm) {
+            margin-left: 50px;
+            margin-bottom: 30px;
+        }
+        
+        span {
+            color: #149A03;
+            font-family: $font-mon-alt;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px; /* 60% */
+        }
+    }
+    
+    &__item {
+        height: 463px;
+        border-radius: 10px;
+        background: #141414;
+        box-shadow: 0px 20px 15px -10px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        font-family: $font-mon;
+        font-size: 150px;
+        font-style: italic;
+        font-weight: 700;
+        @include media($sm) {
+            height: 350px;
+        }
+        @include media($xs) {
+            height: 300px;
+        }
+        @include media(450px) {
+            height: 400px;
+            font-size: 100px;
+        }
+        @include media(370px) {
+            height: 300px;
+        }
+    }
+    
+    &__img {
+        width: 65%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include media(450px) {
+            width: 100%;
+        }
+    }
+    
+    &__content {
+        position: relative;
+        background: linear-gradient(90deg, #141414 37%, rgba(20, 20, 20, 0.00) 100%);
+        padding-left: 80px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        @include media($xs) {
+            padding-left: 50px;
+        }
+        @include media(450px) {
+            background: rgba(20, 20, 20, 0.7);
+            padding-left: 30px;
+        }
+    }
+}
